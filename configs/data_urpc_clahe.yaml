@@ -1,0 +1,11 @@
+# Gray World + CLAHE output must preserve the selected raw dataset's class IDs.
+# Generate/verify this separate dataset before using B0-Enhanced.
+path: ../URPC2020_CLAHE
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: holothurian
+  1: echinus
+  2: scallop
+  3: starfish

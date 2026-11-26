@@ -1,0 +1,817 @@
+{
+  "search_date": "2026-11-18",
+  "scope": "2D small/tiny object detection; YOLO improvements; representative literature, not exhaustive",
+  "evidence_levels": {
+    "A": "Read original abstract/content; not full-paper review or reproduction",
+    "M": "Read original abstract and relevant method/experiment sections in HTML",
+    "S": "Read indexed original metadata/highlights/partial abstract; full text not verified"
+  },
+  "papers": [
+    {
+      "id": "R01",
+      "title": "Towards Large-Scale Small Object Detection: Survey and Benchmarks",
+      "year": "2023",
+      "publication": "TPAMI; SODA-D/SODA-A",
+      "url": "https://arxiv.org/abs/2207.14096",
+      "highlight": "Benchmark chuyên vật thể nhỏ ở cảnh lái xe và ảnh trên không; phân tích vì sao đánh giá chung che khuất lỗi theo kích thước.",
+      "implication": "Dùng để chọn dữ liệu và protocol; SODA-A có ảnh lớn, phải tính cả chi phí cắt và ghép ảnh.",
+      "evidence": "A"
+    },
+    {
+      "id": "R02",
+      "title": "Vision Meets Drones: A Challenge",
+      "year": "2018",
+      "publication": "arXiv; VisDrone2018",
+      "url": "https://arxiv.org/abs/1804.07437",
+      "highlight": "Benchmark UAV có vật thể nhỏ, che khuất, cắt cụt và biến thiên tỉ lệ; bao gồm ảnh và video.",
+      "implication": "Phù hợp thử YOLO tổng quát; phải xử lý vùng ignore và phân chia dữ liệu đúng phiên bản.",
+      "evidence": "A"
+    },
+    {
+      "id": "R03",
+      "title": "DOTA: A Large-scale Dataset for Object Detection in Aerial Images",
+      "year": "2018",
+      "publication": "CVPR",
+      "url": "https://arxiv.org/abs/1711.10398",
+      "highlight": "Ảnh hàng nghìn pixel, nhiều vật thể nhỏ và nhãn tứ giác theo hướng; kiểm tra tốt slicing và độ bền theo góc.",
+      "implication": "Không so trực tiếp AP hộp ngang với AP hộp xoay; ghi rõ DOTA v1/v1.5/v2 và kiểu nhãn.",
+      "evidence": "A"
+    },
+    {
+      "id": "R04",
+      "title": "Scale Match for Tiny Person Detection",
+      "year": "2020",
+      "publication": "WACV; TinyPerson",
+      "url": "https://arxiv.org/abs/1912.10664",
+      "highlight": "Chỉ ra lệch phân bố kích thước giữa pretraining và dữ liệu đích; đưa ra Scale Match và TinyPerson.",
+      "implication": "Cải tiến có thể đến từ cách huấn luyện, không cần thêm block; dùng đúng evaluator TinyPerson vì quy tắc AP từng thay đổi.",
+      "evidence": "A"
+    },
+    {
+      "id": "R05",
+      "title": "A Comprehensive Literature Review on YOLO-Based Small Object Detection: Methods, Challenges, and Future Trends",
+      "year": "2026",
+      "publication": "Computers, Materials & Continua",
+      "url": "https://www.techscience.com/cmc/v87n1/66089",
+      "highlight": "Phân loại cải tiến YOLO theo attention, head, loss và fusion đa tỉ lệ.",
+      "implication": "Dùng mở rộng Related Work; survey không thay thế việc kiểm tra bài gốc khi tuyên bố novelty.",
+      "evidence": "S"
+    },
+    {
+      "id": "R06",
+      "title": "Tiny object detection: An in-depth survey of techniques, challenges, and future directions",
+      "year": "2026",
+      "publication": "Digital Signal Processing",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1051200426001144",
+      "highlight": "Tổng hợp các hướng context, super-resolution, đa tỉ lệ, loss, augmentation và các thách thức tiny object.",
+      "implication": "Hữu ích để kiểm tra độ phủ chủ đề; không xem số liệu giữa nhiều dataset là bảng xếp hạng chung.",
+      "evidence": "S"
+    },
+    {
+      "id": "R07",
+      "title": "Small Object Detection: A Comprehensive Survey on Challenges, Techniques and Real-World Applications",
+      "year": "2025",
+      "publication": "arXiv; bài tổng quan",
+      "url": "https://arxiv.org/abs/2503.20516",
+      "highlight": "Tổng quan các hướng feature đa tỉ lệ, SR, attention, transformer và ứng dụng; nhấn mạnh đánh đổi độ chính xác và tốc độ.",
+      "implication": "Làm bản đồ tài liệu ban đầu; ưu tiên nguồn phương pháp gốc khi triển khai.",
+      "evidence": "A"
+    },
+    {
+      "id": "R08",
+      "title": "A Dataset and Benchmark of Underwater Object Detection for Robot Picking",
+      "year": "2021",
+      "publication": "ICME Workshops; DUO",
+      "url": "https://arxiv.org/abs/2106.05681",
+      "highlight": "Tập hợp và gán nhãn lại dữ liệu dưới nước, giảm vấn đề ảnh tương tự và thiếu nhãn; có benchmark trên thiết bị nhúng.",
+      "implication": "DUO có liên hệ nguồn với các bộ URPC: phải kiểm tra trùng ảnh trước khi gọi chuyển miền là độc lập.",
+      "evidence": "A"
+    },
+    {
+      "id": "R09",
+      "title": "Rethinking general underwater object detection: Datasets, challenges, and solutions",
+      "year": "2023",
+      "publication": "Neurocomputing; RUOD",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0925231222013169",
+      "highlight": "Đưa benchmark nhận diện dưới nước tổng quát với nhiều lớp và điều kiện cảnh hơn bài toán thu hoạch sinh vật.",
+      "implication": "Hữu ích cho kiểm tra chuyển miền; bộ lớp khác URPC/DUO, cần ánh xạ lớp khi đánh giá zero-shot.",
+      "evidence": "S"
+    },
+    {
+      "id": "R10",
+      "title": "Underwater Image Enhancement and Object Detection: Are Poor Object Detection Results On Enhanced Images Due to Missing Human Labels?",
+      "year": "2025",
+      "publication": "WACV Workshops / MaCVi",
+      "url": "https://openaccess.thecvf.com/content/WACV2025W/MaCVi/html/Lucas_Underwater_Image_Enhancement_and_Object_Detection_Are_Poor_Object_Detection_WACVW_2025_paper.html",
+      "highlight": "Chỉ ra ảnh xấu có thể làm người gán nhãn bỏ sót vật thể; gán nhãn lại ảnh tăng cường thay đổi cách đánh giá detector.",
+      "implication": "Không tự động kết luận detection mới trên nền là false positive; audit nhãn bằng quy trình cố định, không sửa test theo mô hình.",
+      "evidence": "A"
+    },
+    {
+      "id": "R11",
+      "title": "Feature Pyramid Networks for Object Detection",
+      "year": "2017",
+      "publication": "CVPR",
+      "url": "https://arxiv.org/abs/1612.03144",
+      "highlight": "Kết hợp nhánh top-down và kết nối ngang để có ngữ nghĩa mạnh ở nhiều độ phân giải.",
+      "implication": "Nền tảng của neck đa tỉ lệ; thêm kết nối fusion đơn thuần không đủ mới.",
+      "evidence": "A"
+    },
+    {
+      "id": "R12",
+      "title": "Path Aggregation Network for Instance Segmentation",
+      "year": "2018",
+      "publication": "CVPR",
+      "url": "https://arxiv.org/abs/1803.01534",
+      "highlight": "Bổ sung đường bottom-up giúp tín hiệu định vị từ tầng nông đến tầng sâu nhanh hơn.",
+      "implication": "Bài gốc là instance segmentation; ý tưởng đường truyền được kế thừa trong detection, không phải bài YOLO chuyên tiny.",
+      "evidence": "A"
+    },
+    {
+      "id": "R13",
+      "title": "EfficientDet: Scalable and Efficient Object Detection",
+      "year": "2020",
+      "publication": "CVPR",
+      "url": "https://arxiv.org/abs/1911.09070",
+      "highlight": "BiFPN dùng fusion hai chiều có trọng số, kèm scaling đồng thời độ phân giải, chiều rộng và chiều sâu.",
+      "implication": "BiFPN là baseline neck cần có; trọng số theo nhánh không đồng nghĩa ước lượng độ tin cậy từng vật thể.",
+      "evidence": "A"
+    },
+    {
+      "id": "R14",
+      "title": "Learning Spatial Fusion for Single-Shot Object Detection",
+      "year": "2019",
+      "publication": "arXiv; ASFF",
+      "url": "https://arxiv.org/abs/1911.09516",
+      "highlight": "Học trọng số fusion theo vị trí để giảm xung đột giữa các mức feature khác tỉ lệ.",
+      "implication": "Nếu đề xuất spatial gate phải so với ASFF; đổi tên gate không tạo khác biệt phương pháp.",
+      "evidence": "A"
+    },
+    {
+      "id": "R15",
+      "title": "CARAFE: Content-Aware ReAssembly of FEatures",
+      "year": "2019",
+      "publication": "ICCV",
+      "url": "https://arxiv.org/abs/1905.02188",
+      "highlight": "Upsampling theo nội dung bằng kernel tái tổ hợp thích nghi, dùng ngữ cảnh rộng hơn nội suy cố định.",
+      "implication": "Có thể nâng neck cho tiny object nhưng không khôi phục được bằng chứng đã mất ở input; cần đo latency thực.",
+      "evidence": "A"
+    },
+    {
+      "id": "R16",
+      "title": "Learning to Upsample by Learning to Sample",
+      "year": "2023",
+      "publication": "ICCV; DySample",
+      "url": "https://arxiv.org/abs/2308.15085",
+      "highlight": "Học vị trí lấy mẫu thay vì kernel convolution động; thiết kế upsampling nhẹ và dùng toán tử PyTorch chuẩn.",
+      "implication": "Baseline phù hợp khi CARAFE quá tốn; chỉ thay upsampler là đóng góp kỹ thuật hạn chế.",
+      "evidence": "A"
+    },
+    {
+      "id": "R17",
+      "title": "No More Strided Convolutions or Pooling: A New CNN Building Block for Low-Resolution Images and Small Objects",
+      "year": "2022",
+      "publication": "ECML PKDD; SPD-Conv",
+      "url": "https://arxiv.org/abs/2208.03641",
+      "highlight": "Space-to-depth chuyển các pha không gian sang kênh trước convolution không stride để giảm mất chi tiết.",
+      "implication": "Phép rearrange giữ mẫu trước convolution, không chứng minh toàn bộ mạng lossless; chú ý chi phí kênh và phụ thuộc pha.",
+      "evidence": "A"
+    },
+    {
+      "id": "R18",
+      "title": "Wavelet Convolutions for Large Receptive Fields",
+      "year": "2024",
+      "publication": "ECCV; WTConv",
+      "url": "https://arxiv.org/abs/2407.05848",
+      "highlight": "Dùng wavelet để mở rộng receptive field với tăng tham số chậm; có đáp ứng đa tần.",
+      "implication": "WTConv không phải phương pháp tiny object chuyên biệt; thêm wavelet vào YOLO cần chứng minh lợi ích riêng.",
+      "evidence": "A"
+    },
+    {
+      "id": "R19",
+      "title": "FcaNet: Frequency Channel Attention Networks",
+      "year": "2021",
+      "publication": "ICCV",
+      "url": "https://arxiv.org/abs/2012.11879",
+      "highlight": "Diễn giải global average pooling như một thành phần tần số và mở rộng thành attention kênh đa phổ.",
+      "implication": "Cần dẫn khi dùng frequency attention; năng lượng phổ cao không tự động tương ứng foreground.",
+      "evidence": "A"
+    },
+    {
+      "id": "R20",
+      "title": "TPH-YOLOv5: Improved YOLOv5 Based on Transformer Prediction Head for Object Detection on Drone-captured Scenarios",
+      "year": "2021",
+      "publication": "ICCV Workshops",
+      "url": "https://arxiv.org/abs/2108.11539",
+      "highlight": "Thêm head cho vật thể rất nhỏ và transformer prediction head; kết hợp các chiến lược huấn luyện và kiểm thử.",
+      "implication": "Bằng chứng sớm rằng head độ phân giải cao đã có trước YOLOv8; tách tác dụng head khỏi ensemble/TTA.",
+      "evidence": "A"
+    },
+    {
+      "id": "R21",
+      "title": "YOLO-Z: Improving small object detection in YOLOv5 for autonomous vehicles",
+      "year": "2021",
+      "publication": "arXiv; bản sửa 2023",
+      "url": "https://arxiv.org/abs/2112.11798",
+      "highlight": "Khảo sát thay cấu trúc và kết nối YOLOv5 để tăng hiệu quả phát hiện vật thể nhỏ trong xe tự hành.",
+      "implication": "Là tiền lệ quan trọng cho điều chỉnh tầng nông và neck; phải báo cả tốc độ, không chỉ mAP50.",
+      "evidence": "A"
+    },
+    {
+      "id": "R22",
+      "title": "YOLOv9: Learning What You Want to Learn Using Programmable Gradient Information",
+      "year": "2024",
+      "publication": "arXiv; YOLOv9",
+      "url": "https://arxiv.org/abs/2402.13616",
+      "highlight": "PGI xử lý vấn đề mất thông tin khi truyền gradient; GELAN tổ chức đường truyền để dùng tham số hiệu quả.",
+      "implication": "Nguồn đối chiếu nếu dùng nhánh phụ khi train; không coi mọi nhánh phụ là novelty.",
+      "evidence": "A"
+    },
+    {
+      "id": "R23",
+      "title": "YOLOv10: Real-Time End-to-End Object Detection",
+      "year": "2024",
+      "publication": "NeurIPS",
+      "url": "https://arxiv.org/abs/2405.14458",
+      "highlight": "Consistent dual assignments cho huấn luyện NMS-free, cùng tối ưu hiệu năng và độ chính xác của kiến trúc.",
+      "implication": "Baseline cần thiết khi nghiên cứu lỗi do NMS; so cả one-to-many và one-to-one phù hợp.",
+      "evidence": "A"
+    },
+    {
+      "id": "R24",
+      "title": "YOLOv12: Attention-Centric Real-Time Object Detectors",
+      "year": "2025",
+      "publication": "Bản arXiv đã xác minh",
+      "url": "https://arxiv.org/abs/2502.12524",
+      "highlight": "Thiết kế detector xoay quanh attention, hướng đến cân bằng khả năng biểu diễn và latency thời gian thực.",
+      "implication": "Baseline hiện đại cho ý tưởng context; attention không tự bảo đảm cải thiện AP tiny trên dữ liệu đích.",
+      "evidence": "A"
+    },
+    {
+      "id": "R25",
+      "title": "YOLOv13: Real-Time Object Detection with Hypergraph-Enhanced Adaptive Visual Perception",
+      "year": "2025",
+      "publication": "Bản arXiv đã xác minh",
+      "url": "https://arxiv.org/abs/2506.17733",
+      "highlight": "HyperACE mô hình hóa tương quan bậc cao và FullPAD phân phối feature tăng cường xuyên pipeline.",
+      "implication": "Đã có tương tác cross-scale/global; ghép thêm context cần mục tiêu lỗi và đối chứng rõ.",
+      "evidence": "A"
+    },
+    {
+      "id": "R26",
+      "title": "Ultralytics YOLO26: Unified Real-Time End-to-End Vision Models",
+      "year": "2026",
+      "publication": "arXiv; báo cáo tác giả Ultralytics",
+      "url": "https://arxiv.org/abs/2606.03748",
+      "highlight": "NMS-free dual head, bỏ DFL, ProgLoss/MuSGD và STAL nhằm bảo đảm tiny object có ứng viên dương.",
+      "implication": "STAL là đối chứng quan trọng cho assignment; recipe công bố có Objects365 pretraining nên phải kiểm soát nguồn trọng số.",
+      "evidence": "M"
+    },
+    {
+      "id": "R27",
+      "title": "Dot Distance for Tiny Object Detection in Aerial Images",
+      "year": "2021",
+      "publication": "CVPR Workshops",
+      "url": "https://openaccess.thecvf.com/content/CVPR2021W/EarthVision/html/Xu_Dot_Distance_for_Tiny_Object_Detection_in_Aerial_Images_CVPRW_2021_paper.html",
+      "highlight": "DotD dùng khoảng cách tâm chuẩn hóa thay độ chồng lấp để giảm vấn đề hộp tiny ít giao nhau.",
+      "implication": "Khoảng cách tâm bỏ qua một phần thông tin biên; không thay metric benchmark bằng metric thuận lợi cho phương pháp.",
+      "evidence": "A"
+    },
+    {
+      "id": "R28",
+      "title": "Detecting tiny objects in aerial images: A normalized Wasserstein distance and a new benchmark",
+      "year": "2022",
+      "publication": "ISPRS Journal; NWD-RKA, AI-TOD-v2",
+      "url": "https://arxiv.org/abs/2206.13996",
+      "highlight": "NWD giảm nhạy với sai lệch vị trí; RKA chọn mẫu theo xếp hạng; gán nhãn lại AI-TOD-v2.",
+      "implication": "Gộp nhánh NWD 2021/2022 để tránh đếm trùng; không có đóng góp mới nếu chỉ ghép NWD vào YOLO.",
+      "evidence": "A"
+    },
+    {
+      "id": "R29",
+      "title": "RFLA: Gaussian Receptive Field based Label Assignment for Tiny Object Detection",
+      "year": "2022",
+      "publication": "ECCV",
+      "url": "https://arxiv.org/abs/2208.08738",
+      "highlight": "Mô hình receptive field bằng Gaussian, dùng RFD và hierarchical assignment để giảm tiny GT bị thiếu giám sát.",
+      "implication": "Gaussian assignment đã có; chuyển từ anchor-based sang anchor-free cần kiểm tra candidate masks cụ thể.",
+      "evidence": "A"
+    },
+    {
+      "id": "R30",
+      "title": "TOOD: Task-aligned One-stage Object Detection",
+      "year": "2021",
+      "publication": "ICCV",
+      "url": "https://arxiv.org/abs/2108.07755",
+      "highlight": "Task-aligned head và TAL giảm lệch giữa classification và localization trong chọn mẫu và tối ưu.",
+      "implication": "Là nền tảng cần hiểu trước khi sửa assigner kiểu TAL; giữ các biến khác cố định khi ablation.",
+      "evidence": "A"
+    },
+    {
+      "id": "R31",
+      "title": "Generalized Focal Loss: Learning Qualified and Distributed Bounding Boxes for Dense Object Detection",
+      "year": "2020",
+      "publication": "NeurIPS; GFL",
+      "url": "https://arxiv.org/abs/2006.04388",
+      "highlight": "Gộp chất lượng định vị vào dự đoán lớp và dùng phân bố vị trí thay điểm duy nhất; cơ sở QFL/DFL.",
+      "implication": "Dùng để phân biệt bất định định vị với score lớp; không mặc định uncertainty của hộp đã được calibration.",
+      "evidence": "A"
+    },
+    {
+      "id": "R32",
+      "title": "Similarity Distance-Based Label Assignment for Tiny Object Detection",
+      "year": "2024",
+      "publication": "IROS; SimD",
+      "url": "https://arxiv.org/abs/2407.02394",
+      "highlight": "Kết hợp tương đồng vị trí và hình dạng với tham số thích nghi; cảnh báo nhiều positive hơn có thể tăng false positive.",
+      "implication": "Đối chứng gần cho assignment thích nghi; bài gốc chủ yếu anchor-based, tích hợp YOLO cần mô tả rõ.",
+      "evidence": "A"
+    },
+    {
+      "id": "R33",
+      "title": "DILA: Dynamic Gaussian Distribution Fitting and Imitation Learning-Based Label Assignment for tiny object detection",
+      "year": "2024",
+      "publication": "Applied Soft Computing",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1568494624007543",
+      "highlight": "Điều chỉnh mô hình Gaussian của effective receptive field bằng ước lượng động và imitation trong assignment.",
+      "implication": "Đã có Gaussian thích nghi; nguồn đọc ở mức nội dung được index, cần full text trước khi sao chép công thức.",
+      "evidence": "S"
+    },
+    {
+      "id": "R34",
+      "title": "Tiny Object Detection via Normalized Gaussian Label Assignment and Multi-Scale Hybrid Attention",
+      "year": "2026",
+      "publication": "Remote Sensing; BCDet",
+      "url": "https://www.mdpi.com/2072-4292/18/3/396",
+      "highlight": "Kết hợp normalized Gaussian label assignment với multi-scale hybrid attention cho tiny object.",
+      "implication": "Đối chứng gần nếu kết hợp Gaussian và attention; abstract chưa đủ để khẳng định khác biệt công thức.",
+      "evidence": "S"
+    },
+    {
+      "id": "R35",
+      "title": "VALA: Virtual anchor-guided label assignment for tiny object detection",
+      "year": "2026",
+      "publication": "Neurocomputing",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0925231226014530",
+      "highlight": "Virtual IoU và dynamic scaling xử lý lệch kích thước anchor–object, can thiệp ở bước train.",
+      "implication": "Không thêm tham số inference đã có tiền lệ; không gọi việc phóng vùng candidate là hoàn toàn mới.",
+      "evidence": "S"
+    },
+    {
+      "id": "R36",
+      "title": "Noise-Robust Tiny Object Localization with Flows",
+      "year": "2026",
+      "publication": "Pattern Recognition; TOLF",
+      "url": "https://arxiv.org/abs/2601.00617",
+      "highlight": "Normalizing flow mô hình phân bố lỗi định vị linh hoạt và điều tiết gradient theo uncertainty khi nhãn nhiễu.",
+      "implication": "Đối chứng sát cho loss có uncertainty; cần tách cải thiện do mô hình lỗi khỏi lọc mẫu khó.",
+      "evidence": "M"
+    },
+    {
+      "id": "R37",
+      "title": "DN-TOD: Robust tiny object detection amidst label noise",
+      "year": "2024 / 2026",
+      "publication": "arXiv 2024; journal Pattern Recognition 2026",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0031320326004140",
+      "highlight": "DN-TOD kết hợp sửa nhãn theo lớp và chiến lược theo xu hướng học để xử lý sai lớp, sai vị trí hộp.",
+      "implication": "Gộp preprint và bài journal cùng hướng thay vì đếm hai; chỉ báo lỗi gán nhãn không đủ mới.",
+      "evidence": "A",
+      "related_urls": [
+        "https://arxiv.org/abs/2401.08056"
+      ]
+    },
+    {
+      "id": "R38",
+      "title": "Feature Information Driven Position Gaussian Distribution Estimation for Tiny Object Detection",
+      "year": "2025",
+      "publication": "CVPR",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Bian_Feature_Information_Driven_Position_Gaussian_Distribution_Estimation_for_Tiny_Object_CVPR_2025_paper.html",
+      "highlight": "Information map từ entropy và position Gaussian mixture có giám sát giúp khơi lại vùng tiny có activation yếu.",
+      "implication": "Phân biệt information/foreground supervision với attention chung; phải so với giám sát map đơn giản.",
+      "evidence": "A"
+    },
+    {
+      "id": "R39",
+      "title": "Tiny object detection via implicit feature fusion and hybrid metric adaptive label assignment",
+      "year": "2026",
+      "publication": "Knowledge-Based Systems; IHANet",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0950705126009445",
+      "highlight": "Kết hợp implicit feature fusion và HALA; phối hợp IoU với RFD theo đặc điểm vật thể.",
+      "implication": "Hybrid metric assignment đã có; không coi cộng hai metric với trọng số học được là novelty mặc định.",
+      "evidence": "S"
+    },
+    {
+      "id": "R40",
+      "title": "Clustered Object Detection in Aerial Images",
+      "year": "2019",
+      "publication": "ICCV; ClusDet",
+      "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Yang_Clustered_Object_Detection_in_Aerial_Images_ICCV_2019_paper.html",
+      "highlight": "Đề xuất vùng cụm, ước lượng scale rồi detect vùng liên quan nhằm bớt chip nền.",
+      "implication": "Chỉ xử lý cụm có thể bỏ sót vật thể đứng riêng; nền tảng quan trọng cho ý tưởng chọn ROI.",
+      "evidence": "A"
+    },
+    {
+      "id": "R41",
+      "title": "Density Map Guided Object Detection in Aerial Images",
+      "year": "2020",
+      "publication": "CVPR Workshops; DMNet",
+      "url": "https://openaccess.thecvf.com/content_CVPRW_2020/html/w11/Li_Density_Map_Guided_Object_Detection_in_Aerial_Images_CVPRW_2020_paper.html",
+      "highlight": "Dùng density map để chọn vùng cắt theo phân bố đối tượng thay chia ô đều.",
+      "implication": "Routing theo mật độ đã tồn tại; cần đo recall của bộ chọn vùng riêng với AP detector.",
+      "evidence": "A"
+    },
+    {
+      "id": "R42",
+      "title": "AutoFocus: Efficient Multi-Scale Inference",
+      "year": "2019",
+      "publication": "ICCV",
+      "url": "https://arxiv.org/abs/1812.01600",
+      "highlight": "FocusPixels dự báo vùng cần tính ở scale lớn hơn, giảm xử lý độ phân giải cao trên nền.",
+      "implication": "Đối chứng cho coarse-to-fine routing; học nơi phóng to chưa phải khoảng trống mới.",
+      "evidence": "A"
+    },
+    {
+      "id": "R43",
+      "title": "QueryDet: Cascaded Sparse Query for Accelerating High-Resolution Small Object Detection",
+      "year": "2022",
+      "publication": "CVPR",
+      "url": "https://arxiv.org/abs/2103.09136",
+      "highlight": "Cascaded sparse query chỉ tính detection ở vị trí độ phân giải cao được chọn, giảm chi phí dense head.",
+      "implication": "Sparse arithmetic không luôn thành latency thấp trên mọi runtime; phải đo triển khai thật.",
+      "evidence": "A"
+    },
+    {
+      "id": "R44",
+      "title": "Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection",
+      "year": "2022",
+      "publication": "ICIP; SAHI",
+      "url": "https://arxiv.org/abs/2202.06934",
+      "highlight": "Chia ảnh chồng lấp để đối tượng chiếm nhiều pixel hơn ở input detector; kết hợp fine-tuning theo lát cắt.",
+      "implication": "Baseline mạnh và dễ làm; tính cả số passes, ghép hộp, vật thể bị cắt ở biên.",
+      "evidence": "A"
+    },
+    {
+      "id": "R45",
+      "title": "Adaptive Slicing-Aided Hyper Inference for Small Object Detection in High-Resolution Remote Sensing Images",
+      "year": "2023",
+      "publication": "Remote Sensing; ASAHI",
+      "url": "https://www.mdpi.com/2072-4292/15/5/1249",
+      "highlight": "Điều chỉnh cách chia ảnh theo số patches thay giữ kích thước lát cắt cố định.",
+      "implication": "Adaptive slicing đã có; thay kích thước tile tự động chưa đủ đóng góp phương pháp.",
+      "evidence": "S"
+    },
+    {
+      "id": "R46",
+      "title": "ESOD: Efficient Small Object Detection on High-Resolution Images",
+      "year": "2024 / 2025",
+      "publication": "TIP; online 2024, volume 2025",
+      "url": "https://arxiv.org/abs/2407.16424",
+      "highlight": "Tái sử dụng backbone cho object seeking và feature slicing, kết hợp sparse head để giảm tính lại feature.",
+      "implication": "Đối chứng rất gần cho routing trong YOLO; cần cùng độ phân giải và cùng ngân sách compute.",
+      "evidence": "A"
+    },
+    {
+      "id": "R47",
+      "title": "When Does Sliced Inference Pay Off? Resolution, Tiling and Dense Fusion for Small Object Detection",
+      "year": "2026",
+      "publication": "arXiv; SCAHI, bản v4 ngày 16-11-2026",
+      "url": "https://arxiv.org/abs/2611.12657",
+      "highlight": "Tách lợi ích từ tăng resolution và slicing; SCAHI ghép dense output với trọng số phủ và lưới peak mịn.",
+      "implication": "Preprint rất mới; kiểm tra độ phân giải, coverage và box-vs-dense fusion trước khi đề xuất merge mới.",
+      "evidence": "M"
+    },
+    {
+      "id": "R48",
+      "title": "DM-EFS: Dynamically Multiplexed Expanded Features Set Form for Robust and Efficient Small Object Detection",
+      "year": "2025",
+      "publication": "ICCV",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Sharma_DM-EFS_Dynamically_Multiplexed_Expanded_Features_Set_Form_for_Robust_and_ICCV_2025_paper.html",
+      "highlight": "Khai thác feature tầng nông độ phân giải cao và dynamic multiplexing để giảm chi phí feature bổ sung trên YOLOv7.",
+      "implication": "Dynamic high-resolution features đã có; cổng bật/tắt P2 cần khác biệt có thể đo được.",
+      "evidence": "A"
+    },
+    {
+      "id": "R49",
+      "title": "ScaleKD: Distilling Scale-Aware Knowledge in Small Object Detector",
+      "year": "2023",
+      "publication": "CVPR",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Zhu_ScaleKD_Distilling_Scale-Aware_Knowledge_in_Small_Object_Detector_CVPR_2023_paper.html",
+      "highlight": "Scale-decoupled distillation và cross-scale assistant giúp student nhỏ học thông tin theo tỉ lệ từ teacher.",
+      "implication": "Đừng nhầm với bài ScaleKD về ViT teacher năm 2024; scale-aware KD đã là hướng có sẵn.",
+      "evidence": "A"
+    },
+    {
+      "id": "R50",
+      "title": "Small Object Detection via Coarse-to-fine Proposal Generation and Imitation Learning",
+      "year": "2023",
+      "publication": "ICCV; CFINet",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Yuan_Small_Object_Detection_via_Coarse-to-fine_Proposal_Generation_and_Imitation_Learning_ICCV_2023_paper.html",
+      "highlight": "Coarse-to-fine RPN tăng proposal chất lượng, feature imitation hỗ trợ vùng khó phân biệt; đánh giá trên SODA.",
+      "implication": "Không chỉ thêm feature mà còn cải thiện supervision; chuyển từ two-stage sang YOLO cần thiết kế tương ứng.",
+      "evidence": "A"
+    },
+    {
+      "id": "R51",
+      "title": "SET: Spectral Enhancement for Tiny Object Detection",
+      "year": "2025",
+      "publication": "CVPR",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Sun_SET_Spectral_Enhancement_for_Tiny_Object_Detection_CVPR_2025_paper.html",
+      "highlight": "Hierarchical Background Smoothing giảm nhiễu cao tần nền; Adversarial Perturbation Injection tăng độ nổi bật của feature khi train.",
+      "implication": "Phản ví dụ cho giả định cứ khuếch đại cao tần sẽ tốt; foreground và clutter phải được phân biệt.",
+      "evidence": "A"
+    },
+    {
+      "id": "R52",
+      "title": "A DeNoising FPN With Transformer R-CNN for Tiny Object Detection",
+      "year": "2024",
+      "publication": "TGRS; DNTR",
+      "url": "https://arxiv.org/abs/2406.05755",
+      "highlight": "DN-FPN dùng contrastive learning giảm nhiễu feature trong fusion top-down; Trans R-CNN tăng biểu diễn tiny.",
+      "implication": "Khử nhiễu cross-scale đã có; cần so với regularizer này nếu đề xuất consistency trong neck.",
+      "evidence": "A"
+    },
+    {
+      "id": "R53",
+      "title": "DQ-DETR: DETR with Dynamic Query for Tiny Object Detection",
+      "year": "2024",
+      "publication": "ECCV",
+      "url": "https://arxiv.org/abs/2404.03507",
+      "highlight": "Counting module và density map điều chỉnh số lượng, vị trí query theo số vật thể trong ảnh.",
+      "implication": "Đối chứng ngoài YOLO cho cảnh dày đặc; không nhầm với DQ-DETR phrase grounding của nhóm tác giả khác.",
+      "evidence": "A"
+    },
+    {
+      "id": "R54",
+      "title": "TinyFormer: Preserving Tiny Objects in YOLO-DETR Hybrid Real-time Detectors",
+      "year": "2026",
+      "publication": "arXiv",
+      "url": "https://arxiv.org/abs/2605.25046",
+      "highlight": "PBM tạo shortcut độ phân giải cao, SSA đưa chi tiết tầng sớm vào token trong detector lai YOLO–DETR.",
+      "implication": "Tách kết quả có/không Objects365; độ chính xác COCO không chứng minh tốt nhất trên AI-TOD.",
+      "evidence": "A"
+    },
+    {
+      "id": "R55",
+      "title": "CSCWD: Cross-Scale Channel-wise Knowledge Distillation for Lightweight Tiny Object Detection on Edge Devices",
+      "year": "2026",
+      "publication": "arXiv",
+      "url": "https://arxiv.org/abs/2609.30395",
+      "highlight": "Teacher YOLO11m-P2 truyền feature P2 sang P3 của student YOLO11n; inference chỉ giữ student.",
+      "implication": "Ý tưởng P2 teacher → P3 student đã được công bố; chỉ thay YOLO11 bằng YOLOv8 không đủ mới.",
+      "evidence": "M"
+    },
+    {
+      "id": "R56",
+      "title": "Reviving the Discarded High-Resolution Feature for Transformer-Based Tiny Object Detection",
+      "year": "2026",
+      "publication": "arXiv; tác giả ghi accepted NeurIPS 2026",
+      "url": "https://arxiv.org/abs/2611.07994",
+      "highlight": "ReDHF kết hợp cross-scale deformable fusion, ellipse-guided shallow supervision và full-scale query interaction.",
+      "implication": "Trạng thái chấp nhận dựa trên ghi chú arXiv, chưa kiểm tra proceedings; high-resolution injection đã có tiền lệ.",
+      "evidence": "A"
+    },
+    {
+      "id": "R57",
+      "title": "DSG-YOLO26: Detail-Preserving and Scale-Gated YOLO for UAV small object detection",
+      "year": "2026",
+      "publication": "Signal Processing: Image Communication",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0923596526002006",
+      "highlight": "Can thiệp tầng nông giữ chi tiết, semantic admission trước fusion và hồi quy theo scale trên YOLO26s.",
+      "implication": "Bài rất sát ý tưởng gated fusion; chỉ có phần index/abstract nên phải đọc full text trước khi chốt novelty.",
+      "evidence": "S"
+    },
+    {
+      "id": "R58",
+      "title": "Soft-NMS -- Improving Object Detection With One Line of Code",
+      "year": "2017",
+      "publication": "ICCV",
+      "url": "https://arxiv.org/abs/1704.04503",
+      "highlight": "Giảm score liên tục theo chồng lấp thay xóa cứng hộp, giúp giữ đối tượng gần nhau.",
+      "implication": "Baseline hậu xử lý bắt buộc cho claim giảm bỏ sót do NMS; đo lại PR và latency.",
+      "evidence": "A"
+    },
+    {
+      "id": "R59",
+      "title": "Adaptive NMS: Refining Pedestrian Detection in a Crowd",
+      "year": "2019",
+      "publication": "CVPR",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Liu_Adaptive_NMS_Refining_Pedestrian_Detection_in_a_Crowd_CVPR_2019_paper.html",
+      "highlight": "Học mật độ để điều chỉnh ngưỡng suppression theo từng instance trong đám đông.",
+      "implication": "Đã có density-aware NMS; kết quả trên pedestrian không tự suy ra hiệu quả mọi lớp tiny object.",
+      "evidence": "A"
+    },
+    {
+      "id": "R60",
+      "title": "Making Convolutional Networks Shift-Invariant Again",
+      "year": "2019",
+      "publication": "ICML; anti-aliased CNNs",
+      "url": "https://arxiv.org/abs/1904.11486",
+      "highlight": "Liên hệ downsampling và aliasing; lọc trước giảm mẫu giúp giảm độ nhạy với dịch ảnh.",
+      "implication": "Bài không chuyên tiny; làm mượt cũng có thể làm mất mục tiêu vài pixel, cần kiểm chứng riêng.",
+      "evidence": "A"
+    },
+    {
+      "id": "R61",
+      "title": "Truly Shift-Invariant Convolutional Neural Networks",
+      "year": "2021",
+      "publication": "CVPR; Adaptive Polyphase Sampling",
+      "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Chaman_Truly_Shift-Invariant_Convolutional_Neural_Networks_CVPR_2021_paper.html",
+      "highlight": "Adaptive Polyphase Sampling chọn thành phần pha để đạt tính nhất quán theo dịch trong thiết lập của bài.",
+      "implication": "Detection cần equivariance của hộp, không phải bất biến vị trí đầu ra; chuyển ý tưởng phải giữ phép biến đổi tọa độ.",
+      "evidence": "A"
+    },
+    {
+      "id": "R62",
+      "title": "Dynamic YOLO for small underwater object detection",
+      "year": "2024",
+      "publication": "Artificial Intelligence Review",
+      "url": "https://link.springer.com/article/10.1007/s10462-024-10788-1",
+      "highlight": "Backbone dựa DCNv3, fusion attention theo kênh/scale/không gian và head tách–căn chỉnh classification/localization.",
+      "implication": "Baseline dưới nước có báo AP small; chi phí deformable và phụ thuộc framework cần cân nhắc.",
+      "evidence": "A"
+    },
+    {
+      "id": "R63",
+      "title": "Underwater small target detection under YOLOv8-LA model",
+      "year": "2024",
+      "publication": "Scientific Reports",
+      "url": "https://www.nature.com/articles/s41598-024-66950-w",
+      "highlight": "Dùng cải tiến feature/attention cùng CARAFE để tăng chất lượng biểu diễn mục tiêu nhỏ dưới nước.",
+      "implication": "Thêm attention và CARAFE đã có tiền lệ; số FPS chỉ có ý nghĩa trong cấu hình đo của bài.",
+      "evidence": "S"
+    },
+    {
+      "id": "R64",
+      "title": "You Sense Only Once Beneath: Ultra-Light Real-Time Underwater Object Detection",
+      "year": "2025",
+      "publication": "RCAR; YSOOB",
+      "url": "https://arxiv.org/abs/2504.15694",
+      "highlight": "Multi-Spectrum Wavelet Encoder, resampling và nén kênh/large-kernel hướng đến detector nhẹ, có đo thiết bị biên.",
+      "implication": "Đối chứng phù hợp cho wavelet YOLO dưới nước; không so trực tiếp FPS TensorRT với PyTorch.",
+      "evidence": "A"
+    },
+    {
+      "id": "R65",
+      "title": "Underwater object detection algorithm integrating image enhancement and deformable convolution",
+      "year": "2025",
+      "publication": "Ecological Informatics; DCM-YOLO",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1574954125001943",
+      "highlight": "Kết hợp UnitModule, DCNv4, DySample và head vật thể nhỏ để xử lý suy giảm ảnh và hình dạng không đều.",
+      "implication": "Tổ hợp enhancement + deformable + head nhỏ đã có; thêm các module tương tự khó tạo điểm mới.",
+      "evidence": "S"
+    },
+    {
+      "id": "R66",
+      "title": "Underwater tiny object detection network based on multi-scale attention and adaptive feature fusion",
+      "year": "2026",
+      "publication": "Intelligent Marine Technology and Systems; BCEA-YOLO",
+      "url": "https://link.springer.com/article/10.1007/s44295-026-00114-6",
+      "highlight": "EMA, bidirectional weighted concatenation và head bốn scale có P2; đánh giá URPC2018/2020 và Jetson.",
+      "implication": "Đối chứng gần nhất với hướng P2 + attention + fusion hiện tại; phải vượt baseline tái hiện cùng split.",
+      "evidence": "A"
+    },
+    {
+      "id": "R67",
+      "title": "WDF-YOLO: a lightweight wavelet and feature-fusion enhanced detector for underwater object detection based on YOLOv12n",
+      "year": "2026",
+      "publication": "Journal of King Saud University Computer and Information Sciences",
+      "url": "https://link.springer.com/article/10.1007/s44443-026-01416-9",
+      "highlight": "Wavelet WTECEP, downsampling DS-MSE và FSPPR nhằm giữ feature, ngữ cảnh và giảm chi phí; có nhiều dataset.",
+      "implication": "Bài ngày 04-11-2026: wavelet và fusion nhẹ đã rất đông; cần đối chứng giữ detail và compute.",
+      "evidence": "A"
+    },
+    {
+      "id": "R68",
+      "title": "MDP-YOLO: underwater object detection based on enhanced feature extraction",
+      "year": "2026",
+      "publication": "Scientific Reports; accepted article/early access",
+      "url": "https://www.nature.com/articles/s41598-026-69925-1",
+      "highlight": "Kết hợp MDRFF với thông tin không gian/tần số/ngữ cảnh; thêm P2 và bỏ P5 theo phân bố scale nhỏ.",
+      "implication": "P2 thay P5 cũng đã có tiền lệ; nguồn đọc qua nội dung được index do trang đầy đủ bị chặn.",
+      "evidence": "S"
+    },
+    {
+      "id": "R69",
+      "title": "UnitModule: A Lightweight Joint Image Enhancement Module for Underwater Object Detection",
+      "year": "2024",
+      "publication": "Pattern Recognition; preprint 2023",
+      "url": "https://arxiv.org/abs/2309.04708",
+      "highlight": "Module enhancement nhẹ được train cùng detector bằng loss không giám sát; color-cast predictor và UCRT augmentation.",
+      "implication": "Hướng dẫn enhancement theo detection không mới; có thể làm đối chứng cho Gray World + CLAHE hiện tại.",
+      "evidence": "A"
+    },
+    {
+      "id": "R70",
+      "title": "Joint Perceptual Learning for Enhancement and Object Detection in Underwater Scenarios",
+      "year": "2023",
+      "publication": "arXiv; DPNet",
+      "url": "https://arxiv.org/abs/2307.03536",
+      "highlight": "Bilevel optimization và shared representation kết nối hai tác vụ enhancement/detection thay tối ưu hình đẹp riêng.",
+      "implication": "Đề xuất joint enhancement phải so với tiền lệ này; ảnh đẹp không chứng minh AP tốt.",
+      "evidence": "A"
+    },
+    {
+      "id": "R71",
+      "title": "Is Underwater Image Enhancement All Object Detectors Need?",
+      "year": "2023",
+      "publication": "arXiv; nghiên cứu thực nghiệm",
+      "url": "https://arxiv.org/abs/2311.18814",
+      "highlight": "Đánh giá nhiều thuật toán enhancement và detector được train lại để khảo sát tác động của preprocessing.",
+      "implication": "Là lý do phải giữ baseline ảnh raw; tránh kết luận CLAHE luôn có lợi chỉ bằng vài ảnh trực quan.",
+      "evidence": "A"
+    },
+    {
+      "id": "R72",
+      "title": "Revisiting Underwater Image Enhancement for Object Detection: A Unified Quality–Detection Evaluation Framework",
+      "year": "2024–2026",
+      "publication": "arXiv 2024, sửa 2025; Journal of Imaging 2026",
+      "url": "https://www.mdpi.com/2313-433X/12/1/18",
+      "highlight": "Đánh giá theo từng ảnh, thấy metric chất lượng ảnh không dự đoán tin cậy detection; phân tích mixed-set upper bound cho enhancement chọn lọc.",
+      "implication": "Cùng mạch với Beneath the Surface (arXiv 2411.14626); oracle dùng GT chỉ là upper bound, không phải thuật toán triển khai.",
+      "evidence": "A",
+      "related_urls": [
+        "https://arxiv.org/abs/2411.14626"
+      ]
+    },
+    {
+      "id": "R73",
+      "title": "Perceptual Generative Adversarial Networks for Small Object Detection",
+      "year": "2017",
+      "publication": "CVPR",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Li_Perceptual_Generative_Adversarial_CVPR_2017_paper.html",
+      "highlight": "Perceptual GAN giảm chênh lệch biểu diễn giữa đối tượng nhỏ và lớn bằng học feature giàu thông tin hơn.",
+      "implication": "Tiền lệ quan trọng của feature super-resolution; ảnh hoặc feature trông sắc hơn không bảo đảm giữ đúng bằng chứng.",
+      "evidence": "A"
+    },
+    {
+      "id": "R74",
+      "title": "Augmentation for small object detection",
+      "year": "2019",
+      "publication": "arXiv",
+      "url": "https://arxiv.org/abs/1902.07296",
+      "highlight": "Oversample ảnh có vật thể nhỏ và copy-paste thêm đối tượng để tăng số lần xuất hiện và supervision.",
+      "implication": "Cần baseline augmentation mạnh; kiểm soát scale, context, overlap và tránh dán đối tượng từ validation/test.",
+      "evidence": "A"
+    },
+    {
+      "id": "R75",
+      "title": "An Analysis of Scale Invariance in Object Detection - SNIP",
+      "year": "2018",
+      "publication": "CVPR",
+      "url": "https://arxiv.org/abs/1711.08189",
+      "highlight": "Huấn luyện trên image pyramid nhưng chỉ backprop cho vật thể trong dải kích thước phù hợp từng scale.",
+      "implication": "Scale-aware training đã có lâu; phải báo chính sách chọn dải kích thước và pixel budget.",
+      "evidence": "A"
+    },
+    {
+      "id": "R76",
+      "title": "SNIPER: Efficient Multi-Scale Training",
+      "year": "2018",
+      "publication": "NeurIPS / NIPS 2018",
+      "url": "https://arxiv.org/abs/1805.09300",
+      "highlight": "Chọn context chips quanh GT và hard background ở scale thích hợp để giảm chi phí multi-scale training.",
+      "implication": "GT được dùng để chọn crop khi train là hợp lệ; không được dùng GT cho chọn crop khi test.",
+      "evidence": "A"
+    },
+    {
+      "id": "R77",
+      "title": "Focal and Global Knowledge Distillation for Detectors",
+      "year": "2022",
+      "publication": "CVPR; FGD",
+      "url": "https://arxiv.org/abs/2111.11837",
+      "highlight": "Tách foreground/background khi distill feature và truyền quan hệ toàn cục giữa các pixel.",
+      "implication": "Đối chứng cho weighting KD theo vùng; dùng mask đối tượng đơn giản có thể đã giải thích phần lớn lợi ích.",
+      "evidence": "A"
+    },
+    {
+      "id": "R78",
+      "title": "DETRs Beat YOLOs on Real-time Object Detection",
+      "year": "2024",
+      "publication": "CVPR; RT-DETR, preprint 2023",
+      "url": "https://arxiv.org/abs/2304.08069",
+      "highlight": "Hybrid encoder nhẹ và uncertainty-minimal query selection cho detector end-to-end thời gian thực.",
+      "implication": "Baseline ngoài YOLO để kiểm tra đóng góp có tổng quát; cùng resolution/runtime và nguồn pretraining.",
+      "evidence": "A"
+    },
+    {
+      "id": "R79",
+      "title": "DEIM: DETR with Improved Matching for Fast Convergence",
+      "year": "2025",
+      "publication": "CVPR",
+      "url": "https://arxiv.org/abs/2412.04234",
+      "highlight": "Dense one-to-one matching tăng supervision; Matchability-Aware Loss xử lý match kém chất lượng.",
+      "implication": "Assignment và tốc độ hội tụ đã có nghiên cứu mạnh; so cả fixed epochs và fixed training cost.",
+      "evidence": "A"
+    },
+    {
+      "id": "R80",
+      "title": "Scale-Aware Trident Networks for Object Detection",
+      "year": "2019",
+      "publication": "ICCV",
+      "url": "https://arxiv.org/abs/1901.01892",
+      "highlight": "Các nhánh dùng chung trọng số nhưng receptive field khác nhau, học theo scale để thích ứng vật thể nhiều kích thước.",
+      "implication": "Đối chứng ý tưởng receptive field/context theo kích thước; không mặc định context rộng nhất là tốt nhất.",
+      "evidence": "A"
+    }
+  ]
+}

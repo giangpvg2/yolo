@@ -1,0 +1,9 @@
+# Fixed heuristic cutoffs. Validate manually on development images before freezing.
+# These describe visual quality and texture, not measured water turbidity.
+analysis_size: 512
+contrast_reference: 50.0
+sharpness_reference: 300.0
+severity_weights: [0.4, 0.4, 0.2]
+severity_cutoffs: [0.35, 0.65]
+clutter_edge_density: 0.12
+dhash_distance: 4

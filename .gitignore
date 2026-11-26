@@ -1,0 +1,45 @@
+# Local environments and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+.aws/
+
+# Python environments and generated files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.deepeval/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Datasets, model weights and experiment outputs
+URPC*/
+urpc/
+archive/
+*.tar
+*.zip
+*.pt
+*.pth
+*.onnx
+*.engine
+runs/
+wandb/
+reports/
+datasets/
+
+# Editor and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

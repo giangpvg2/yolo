@@ -1,0 +1,8 @@
+ultralytics==8.3.232
+torch==2.9.1
+torchvision==0.24.1
+opencv-python==4.13.0.92
+numpy==2.4.6
+tqdm==4.67.3
+PyYAML==6.0.3
+pycocotools==2.0.11

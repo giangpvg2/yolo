@@ -1,0 +1,10 @@
+# User-selected source dataset. Preserve the IDs declared by its original YAML.
+path: ../archive/URPC2020
+train: train/images
+val: valid/images
+test: test/images
+names:
+  0: holothurian
+  1: echinus
+  2: scallop
+  3: starfish

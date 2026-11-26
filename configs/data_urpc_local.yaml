@@ -1,0 +1,11 @@
+# Local Roboflow export: five classes, train/valid only. Not the four-class URPC2020 benchmark.
+# Preserve the class IDs declared by the supplied dataset; verify provenance before publication.
+path: ../URPC.v1i.yolov8
+train: train/images
+val: valid/images
+names:
+  0: Fish
+  1: Scallop
+  2: Seacucumber
+  3: Seaurchin
+  4: Star-fish
